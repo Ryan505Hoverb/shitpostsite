@@ -177,9 +177,13 @@
 </head>
 <body>
   <script>
-    const password = prompt("Panpa giriş şifresi? (ipucu: götten)");
+    const password = prompt("Panpa giriş şifresi? (ipucu: şeytanı taşla)");
     if (password !== "karayıgötten") {
-      window.location.href = "https://www.youtube.com/watch?v=yCvIot-03u8";  // Şifre yanlışsa YouTube video linkine yönlendir
+      document.body.innerHTML = '';  // Sayfa içeriğini temizle
+      const videoDiv = document.createElement('div');
+      videoDiv.classList.add('video-background');
+      document.body.appendChild(videoDiv);  // Boş sayfa yerine YouTube videosunun arka planını ekle
+      window.location.href = "https://www.youtube.com/watch?v=yCvIot-03u8";  // Yanlış şifre durumunda yönlendirme
     }
   </script>
 
